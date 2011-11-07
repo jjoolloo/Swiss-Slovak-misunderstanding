@@ -1,0 +1,18 @@
+%force calculator
+
+%force by potential
+
+%only calculate near persons
+
+%circumsquare around person to be considered
+csq = 4;
+
+for i=1:person.length
+    indx = person.int_x;
+    indy = person.int_y;
+    for k = -csq:csq
+        for i=1:person.length
+            if
+    end
+    
+end

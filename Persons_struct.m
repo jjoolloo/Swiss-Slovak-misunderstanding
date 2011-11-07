@@ -20,3 +20,7 @@ person.force_y = [0 0 0];
 
 
 person.color = [13 31 31];
+
+%check that all vectors have the same length
+
+person.length = length(person.ex_x);
