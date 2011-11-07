@@ -1,0 +1,16 @@
+
+
+person.ex_x = [1 1 1];
+person.ex_y = [1 2 3];
+
+person.int_x = [];
+person.int_y = [];
+
+person.level = [];
+
+person.mass = [];
+
+person.force_x = [];
+person.force_y = [];
+
+person.color = [];
