@@ -1,0 +1,4 @@
+%visualizing stuff
+figure(1)
+
+scatter

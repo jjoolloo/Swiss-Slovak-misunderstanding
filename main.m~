@@ -6,10 +6,9 @@ run Maps_struct
 run Persons_struct
 
 max_iter = 100;
-
+figure(1)
 for iter=1:max_iter
     run Forces
     run move
-    run visual
+    
 end
-

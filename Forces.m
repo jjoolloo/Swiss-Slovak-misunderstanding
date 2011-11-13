@@ -2,6 +2,9 @@
 
 %force by potential
 
+%maximum force acting on a person
+max_f = 10; %subject to adjustment
+
 for i=1:person.length
     floor = person.level(i);
     indx = person.int_x(i);
@@ -23,6 +26,9 @@ for i=1:person.length
             dist = sqrt((person.ex_x(i) - person.ex_x(k))^2 + (person.ex_y(i) - person.ex_y(k))^2);
             if dist < 10 %cutoff length (1 equals 0.5 meter)
                 f = 1/dist;  %function to be adjusted!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                if f > max_f
+                    f = max_f;
+                end
                 person.force_x(i) = f*(person.ex_x(i) - person.ex_x(k))/dist;
                 person.force_y(i) = f*(person.ex_y(i) - person.ex_y(k))/dist;
             end
