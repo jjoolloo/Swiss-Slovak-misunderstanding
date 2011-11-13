@@ -9,8 +9,13 @@ for i=1:person.length
     map_of_floor = map(floor).wall + map(floor).pot;
     
     %force by potential
+    [M,N] = size(map_of_floor);
+    if indx < N && indx > 1 && indy < M && indy > 1
     person.force_x(i) = 0.5*((map_of_floor(indy,indx-1) - map_of_floor(indy,indx+1)));
     person.force_y(i) = 0.5*((map_of_floor(indy-1,indx) - map_of_floor(indy+1,indx)));
+    end
+    
+    
     
     %force by other persons
     for k=1:person.length

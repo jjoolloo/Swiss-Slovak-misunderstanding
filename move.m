@@ -16,3 +16,5 @@ for i=1:person.length
     person.force_y(i) = 0;
     
 end
+
+clear i dt
