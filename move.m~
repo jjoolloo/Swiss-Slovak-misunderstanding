@@ -1,0 +1,9 @@
+%move them
+
+dt = 1; %timestep 
+
+for i=1:person.length
+    person.ex_x(i) = person.ex_x(i) + dt*person.force_x(i);
+    person.ex_y(i) = person.ex_y(i) + dt*person.force_y(i);
+    
+end
