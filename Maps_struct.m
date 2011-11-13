@@ -7,6 +7,8 @@
 
 %each cell equals a 0.5*0.5 square area (Maybe the Walls get a bit thick :) )
 
+
+map = struct('wall',{},'pot',{},'vis',{},'act',{});
 %declaring (for the overview)
 map(1).wall
 map(1).pot

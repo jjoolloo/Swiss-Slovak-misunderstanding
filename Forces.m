@@ -2,19 +2,13 @@
 
 %force by potential
 
-%only calculate near persons
-
-%circumsquare around person to be considered
-csq = 4;
-
 for i=1:person.length
-    indx = person.int_x;
-    indy = person.int_y;
+    floor = person.level(i);
+    indx = person.int_x(i);
+    indy = person.int_y(i);
+    map_of_floor = map(floor).wall + map(floor).pot;
     
-    for k=1:person.length
-        if i~=k
-            %distance and force calculations
-        end
-    end
+    person.force_x(i) = 0.5*((map_of_floor(indy,indx-1) - map_of_floor(indy,indx+1)));
+    person.force_y(i) = 0.5*((map_of_floor(indy-1,indx) - map_of_floor(indy+1,indx)));
     
 end

@@ -1,0 +1,13 @@
+%force calculator
+
+%force by potential
+
+for i=1:person.length
+    floor = person.level(i);
+    indx = person.int_x(i);
+    indy = person.int_y(i);
+    
+    
+    person.force_x(i) = ()
+    
+end
