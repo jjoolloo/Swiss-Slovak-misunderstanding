@@ -7,16 +7,14 @@ for i=1:person.length
     ex_x = person.ex_x(i) + dt*person.force_x(i);
     ex_y = person.ex_y(i) + dt*person.force_y(i);
     
-    for k=1:M*N
-        
-    end
+    int_x = int64(person.ex_x(i));
+    int_y = int64(person.ex_y(i));
     
     
     
     
     %update the cell positions
-    person.int_x(i) = int64(person.ex_x(i));
-    person.int_y(i) = int64(person.ex_y(i));
+    
     
     %reset forces
     person.force_x(i) = 0;
