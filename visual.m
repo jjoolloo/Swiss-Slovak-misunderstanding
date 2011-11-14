@@ -11,6 +11,6 @@ for k=1:M
 end
 xlim([0 N]);
 ylim([0 M]);
-pause(0.1)
+pause(0.01)
 hold off
 clf(1)
