@@ -11,5 +11,6 @@ for iter=1:max_iter
     run Forces
     run move
     run visual
+    
 end
 

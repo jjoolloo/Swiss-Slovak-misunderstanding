@@ -10,7 +10,16 @@ for i=1:person.length
     int_x = int64(person.ex_x(i));
     int_y = int64(person.ex_y(i));
     
-    
+    if map.wall(int_y,int_x) > 0
+        if map.wall(person.int_y+1,person.int_x) == 0 || map.wall(person.int_y-1,person.int_x) == 0
+            person.int_y = int_y;
+            person.ex_y = ex_y;
+        end
+        if map.wall(person.int_y,person.int_x+1) == 0 || map.wall(person.int_y,person.int_x-1) == 0
+            person.int_x = int_x;
+            person.ex
+        end
+    end
     
     
     %update the cell positions

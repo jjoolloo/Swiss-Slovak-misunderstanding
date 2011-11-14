@@ -28,19 +28,19 @@
 
 %%
 %tryout
-person.ex_x = [22  5 10];
-person.ex_y = [25 25 29];
+person.ex_x = [22 15 23];
+person.ex_y = [25 22 24];
 
 person.int_x = uint64(person.ex_x);
 person.int_y = uint64(person.ex_y);
 
-person.level = [1 1 1];
+person.level = [1 1 1 1 1];
 
-person.mass = [2 2 2];
+person.mass = [2 2 2 2 2];
 
-person.force_x = [0 0 0];
-person.force_y = [0 0 0];
+person.force_x = [0 0 0 0 0];
+person.force_y = [0 0 0 0 0];
 
-person.color = [13 31 31];
+person.color = [13 31 2 2 2];
 
 person.length = length(person.ex_x);

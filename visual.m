@@ -5,7 +5,7 @@ scatter(person.ex_x,person.ex_y,50,'r','filled')
 for k=1:M
     for l=1:N
         if map.wall(k,l) > 0
-            scatter(l,k,'k','filled')
+            scatter(l,k,10,'k','filled')
         end
     end
 end
