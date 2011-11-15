@@ -1,4 +1,4 @@
-%force calculator
+function [person] = Forces(person,map)
 
 %force by potential
 
@@ -42,8 +42,8 @@ for i=1:person.length
                 person.force_x(i) = person.force_x(i)+f*(person.ex_x(i) - person.ex_x(k))/dist;
                 person.force_y(i) = person.force_y(i)+f*(person.ex_y(i) - person.ex_y(k))/dist;
             end
-         end
+        end
     end
 end
 
-clear dist f indx indy i k map_of_floor floor
+end

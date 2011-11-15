@@ -1,4 +1,4 @@
-%move them
+function [person,map]=move(person,map)
 
 dt = 1; %timestep 
 
@@ -36,4 +36,4 @@ for i=1:person.length
     
 end
 
-clear i dt
+end
