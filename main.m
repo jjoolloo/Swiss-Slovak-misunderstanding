@@ -5,7 +5,7 @@ clear all ,clc ,close all
 run Maps_struct 
 run Persons_struct
 
-record = [];
+record = [];   %just a dummy for recording(....)
 max_iter = 100;
 
 for iter=1:max_iter
