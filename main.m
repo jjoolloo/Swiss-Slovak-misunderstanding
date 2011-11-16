@@ -2,7 +2,7 @@
 clear all ,clc ,close all
 
 
-run Maps_struct 
+run trymap
 run Persons_struct
 
 record = [];   %just a dummy for recording(....)

@@ -7,8 +7,8 @@ for i=1:person.length
     ex_x = person.ex_x(i) + dt*person.force_x(i);
     ex_y = person.ex_y(i) + dt*person.force_y(i);
     
-    int_x = int64(floor(person.ex_x(i)));
-    int_y = int64(floor(person.ex_y(i)));
+    int_x = int64(ceil(person.ex_x(i)));
+    int_y = int64(ceil(person.ex_y(i)));
     
     if map.wall(int_y,int_x) > 0
         if map.wall(person.int_y(i)+1,person.int_x(i)) == 0 || map.wall(person.int_y(i)-1,person.int_x(i)) == 0

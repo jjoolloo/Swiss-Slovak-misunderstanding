@@ -15,15 +15,16 @@ end
 
 for n = 1:length(record.time_x)
     hold on
-    scatter(x,y,60,'k','filled')
-    scatter(record.time_x(n,1),record.time_y(n,1),10,'r','filled')
-    scatter(record.time_x(n,2),record.time_y(n,2),10,'m','filled')
-    scatter(record.time_x(n,3),record.time_y(n,3),10,'g','filled')
+    scatter(x,y,100,'k','filled')
+    for m=1:person.length
+        scatter(record.time_x(n,m),record.time_y(n,m),50,'r','filled')
+    end
     
     xlim([0 N]);
     ylim([0 M]);
-    
-    pause(0.02)
+    grid on
+    %waitforbuttonpress();
+    pause(1)
     clf(1)
 %for saving the pictures
 %     filename = 'pic';
@@ -32,6 +33,5 @@ for n = 1:length(record.time_x)
 %     saveas(1,filename,'jpg');
 end
 
-
-
 hold off
+clear n k l m 

@@ -3,7 +3,7 @@ function [person] = Forces(person,map)
 %force by potential
 
 %maximum force acting on a person
-max_f = 1; %subject to adjustment
+max_f = 0.1; %subject to adjustment
 
 for i=1:person.length
     floor = person.level(i);
