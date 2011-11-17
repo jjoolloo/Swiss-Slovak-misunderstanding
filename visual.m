@@ -24,10 +24,9 @@ for n = 1:length(record.time_x)
     ylim([0 M]);
     grid on
     %waitforbuttonpress();
-    pause(0.2)
-    clf(1)
+    
 %for saving the pictures
-%     filename = 'pic';
+%     filename = '/Volumes/Users/alexanderjoehl/Downloads/pic';
 %     number = num2str(n);
 %     filename = cat(2,filename,number);
 %     saveas(1,filename,'jpg');
