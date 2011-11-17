@@ -1,34 +1,17 @@
-%move them
+function [person,map]=move(person,map)
 
 dt = 1; %timestep 
+max_step = 5;
+
 
 for i=1:person.length
-    %update the positions
-    ex_x = person.ex_x(i) + dt*person.force_x(i);
-    ex_y = person.ex_y(i) + dt*person.force_y(i);
-    
-    int_x = int64(person.ex_x(i));
-    int_y = int64(person.ex_y(i));
-    
-    if map.wall(int_y,int_x) > 0
-        if map.wall(person.int_y+1,person.int_x) == 0 || map.wall(person.int_y-1,person.int_x) == 0
-            person.int_y = int_y;
-            person.ex_y = ex_y;
-        end
-        if map.wall(person.int_y,person.int_x+1) == 0 || map.wall(person.int_y,person.int_x-1) == 0
-            person.int_x = int_x;
-            person.ex
-        end
+    if person.force_x(i)*dt > max_step
+        person.x(i) = person.x(i) + max_step;
+    elseif person.force_x(i)*dt < -max_step
+        person.x(i) = person.x(i) - max_step;
+    else
+        person.x(i) = person.x(i) + person.force_x(i)*dt;
     end
-    
-    
-    %update the cell positions
-    
-    
-    %reset forces
-    person.force_x(i) = 0;
-    person.force_y(i) = 0;
-    
 end
 
-clear i dt
+end

@@ -24,7 +24,7 @@ for n = 1:length(record.time_x)
     ylim([0 M]);
     grid on
     %waitforbuttonpress();
-    pause(1)
+    pause(0.2)
     clf(1)
 %for saving the pictures
 %     filename = 'pic';

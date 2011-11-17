@@ -1,38 +1,36 @@
-function [person,map]=move(person,map)
+function [person]=move(person,map)
 
 dt = 1; %timestep 
+max_step = 5;
+
 
 for i=1:person.length
-    %update the positions
-    ex_x = person.ex_x(i) + dt*person.force_x(i);
-    ex_y = person.ex_y(i) + dt*person.force_y(i);
-    
-    int_x = int64(ceil(person.ex_x(i)));
-    int_y = int64(ceil(person.ex_y(i)));
-    
-    if map.wall(int_y,int_x) > 0
-        if map.wall(person.int_y(i)+1,person.int_x(i)) == 0 || map.wall(person.int_y(i)-1,person.int_x(i)) == 0
-            person.int_x(i) = int_x;
-            person.ex_x(i) = ex_x;
-        end
-        if map.wall(person.int_y(i),person.int_x(i)+1) == 0 || map.wall(person.int_y(i),person.int_x(i)-1) == 0
-            person.int_y(i) = int_y;
-            person.ex_y(i) = ex_y;
-        end
+    if person.force_x(i)*dt > max_step
+        x_new = person.x(i) + max_step;
+    elseif person.force_x(i)*dt < -max_step
+        x_new = person.x(i) - max_step;
     else
-        person.int_y(i) = int_y;
-        person.ex_y(i) = ex_y;
-        person.int_x(i) = int_x;
-        person.ex_x(i) = ex_x;
+        x_new = person.x(i) + floor(person.force_x(i)*dt);
     end
     
-
+    if person.force_y(i)*dt > max_step
+        y_new = person.y(i) + max_step;
+    elseif person.force_y(i)*dt < -max_step
+        y_new = person.y(i) - max_step;
+    else
+        y_new = person.y(i) + floor(person.force_y(i)*dt);
+    end
     
+    if map.wall(y_new,x_new) > 0
+        ......
+        
+    else
+        person.x(i) = x_new;
+        person.y(i) = y_new;
+    end
     
-    
-    %reset forces
-    person.force_x(i) = 0;
-    person.force_y(i) = 0;
+    person.force_x(i)=0;
+    person.force_y(i)=0;
     
 end
 
