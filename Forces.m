@@ -27,8 +27,8 @@ for i=1:person.length
     for k=1:person.length
         if k~=i && person.level(i) == person.level(k)   %not itself and only persons on the same floor
             dist = sqrt((person.x(i) - person.x(k))^2 + (person.y(i) - person.y(k))^2);
-            if dist < 10 %cutoff length (1 equals 0.5 meter)
-                f = 10/dist;  %function to be adjusted!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            if dist < 500 %cutoff length 
+                f = 100/dist;  %function to be adjusted!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 person.force_x(i) = person.force_x(i)+f*(person.x(i) - person.x(k))/dist;
                 person.force_y(i) = person.force_y(i)+f*(person.y(i) - person.y(k))/dist;
             end

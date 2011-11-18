@@ -1,4 +1,5 @@
 %visualizing stuff
+close all
 figure(1)
 
 [M,N] = size(map.wall);
@@ -17,19 +18,22 @@ for n = 1:length(record.time_x)
     hold on
     scatter(x,y,100,'k','filled')
     for m=1:person.length
+        hold on
         scatter(record.time_x(n,m),record.time_y(n,m),50,'r','filled')
     end
     
     xlim([0 N]);
     ylim([0 M]);
     grid on
+    %pause(0.01)
     %waitforbuttonpress();
-    
+    disp(n)
 %for saving the pictures
-%     filename = '/Volumes/Users/alexanderjoehl/Downloads/pic';
-%     number = num2str(n);
-%     filename = cat(2,filename,number);
-%     saveas(1,filename,'jpg');
+    filename = '~/Downloads/';
+    number = num2str(n);
+    filename = strcat(filename,number);
+    saveas(gcf,filename,'jpg');
+    clf(gcf)
 end
 
 hold off

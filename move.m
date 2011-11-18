@@ -12,7 +12,7 @@ for i=1:person.length
     elseif person.force_x(i)*dt < -max_step
         x_new = person.x(i) - max_step;
     else
-        x_new = person.x(i) + floor(person.force_x(i)*dt);
+        x_new = person.x(i) + int32(person.force_x(i)*dt);
     end
     
     if person.force_y(i)*dt > max_step
@@ -20,7 +20,7 @@ for i=1:person.length
     elseif person.force_y(i)*dt < -max_step
         y_new = person.y(i) - max_step;
     else
-        y_new = person.y(i) + floor(person.force_y(i)*dt);
+        y_new = person.y(i) + int32(person.force_y(i)*dt);
     end
     
     
