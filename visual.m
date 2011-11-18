@@ -16,7 +16,7 @@ end
 
 for n = 1:length(record.time_x)
     hold on
-    scatter(x,y,100,'k','filled')
+    scatter(x,y,10,'k','filled')
     for m=1:person.length
         hold on
         scatter(record.time_x(n,m),record.time_y(n,m),50,'r','filled')
@@ -29,12 +29,13 @@ for n = 1:length(record.time_x)
     %waitforbuttonpress();
     disp(n)
 %for saving the pictures
-    filename = '~/Downloads/';
-    number = num2str(n);
-    filename = strcat(filename,number);
-    saveas(gcf,filename,'jpg');
+%     filename = '~/Downloads/';
+%     number = num2str(n);
+%     filename = strcat(filename,number);
+%     saveas(gcf,filename,'jpg');
+    pause(0.01)
     clf(gcf)
 end
 
 hold off
-clear n k l m 
+clear n k l m filename number 
