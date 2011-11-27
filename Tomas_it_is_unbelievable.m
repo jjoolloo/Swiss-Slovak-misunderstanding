@@ -4,7 +4,7 @@ clc
 [FileName,PathName] = uigetfile('*.bmp', 'Select a Bitmap File');
 I=imread(strcat(PathName,FileName));
 
-[a b] = size(I)
+[a b] = size(I);
 for i=1:a
     for j=1:b
         if I(i,j)<50
@@ -23,7 +23,7 @@ for i=1:a
     
 end
 
-I(300,250)=2
+
 
 f = getFile_my(I);
 [FX,FY]=computeGradientField1(f);
