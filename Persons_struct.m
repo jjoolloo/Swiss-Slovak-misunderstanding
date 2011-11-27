@@ -27,21 +27,20 @@
 
 
 %%
-% %tryout
-% person.x = [20];
-% person.y = [20];
-% 
-% 
-% person.level = [1];
-% 
-% person.mass = [2];
-% 
-% person.force_x = [0];
-% person.force_y = [0];
-% 
-% person.color = [13];
-% 
-% person.length = length(person.x);
+%tryout
+person.ex_x = [22  5 10];
+person.ex_y = [25 25 29];
 
+person.int_x = uint64(person.ex_x);
+person.int_y = uint64(person.ex_y);
 
-load persons_test
+person.level = [1 1 1];
+
+person.mass = [2 2 2];
+
+person.force_x = [0 0 0];
+person.force_y = [0 0 0];
+
+person.color = [13 31 31];
+
+person.length = length(person.ex_x);
