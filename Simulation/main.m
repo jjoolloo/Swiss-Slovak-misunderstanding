@@ -12,7 +12,7 @@ record = []; %just a dummy for recording(....)
 max_iter = 100;
 
 for iter=1:max_iter
-    record = recording(person,iter,record);
     person = Forces(person,map);
+    record = recording(person,iter,record);
     person = move(person,map);
 end
