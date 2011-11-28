@@ -1,32 +1,43 @@
-%move them
+function [person]=move(person,map)
 
-dt = 1; %timestep 
+dt = 1; %timestep
+max_step = 5;
+
 
 for i=1:person.length
-    %update the positions
-    ex_x = person.ex_x(i) + dt*person.force_x(i);
-    ex_y = person.ex_y(i) + dt*person.force_y(i);
-    
-    int_x = int64(person.ex_x(i));
-    int_y = int64(person.ex_y(i));
-    
-    if map.wall(int_y,int_x) > 0
-        
+    if person.force_x(i)*dt > max_step
+        x_new = person.x(i) + max_step;
+    elseif person.force_x(i)*dt < -max_step
+        x_new = person.x(i) - max_step;
     else
-        person.ex_x(i)=ex_x;
-        person.ex_y(i)=ex_y;
-        person.int_x(i)=int_x;
-        person.int_y(i)=int_y;
+        x_new = person.x(i) + floor(person.force_x(i)*dt);
     end
     
+    if person.force_y(i)*dt > max_step
+        y_new = person.y(i) + max_step;
+    elseif person.force_y(i)*dt < -max_step
+        y_new = person.y(i) - max_step;
+    else
+        y_new = person.y(i) + floor(person.force_y(i)*dt);
+    end
     
-    %update the cell positions
+%making sure it isnt in the wall
+    while map.wall(y_new,x_new) > 0
+        %make small steps backwards
+        stepx = -(x_new - person.x(i))/abs(x_new - person.x(i));
+        stepy = -(y_new - person.y(i))/abs(y_new - person.y(i));
+        x_new = x_new + stepx;
+        y_new = y_new + stepy;
+    end
+    
+    person.x(i) = x_new;
+    person.y(i) = y_new;
     
     
-    %reset forces
-    person.force_x(i) = 0;
-    person.force_y(i) = 0;
+    %reset the forces
+    person.force_x(i)=0;
+    person.force_y(i)=0;
     
 end
 
-clear i dt
+end
