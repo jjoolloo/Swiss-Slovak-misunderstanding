@@ -24,8 +24,8 @@
 
 %%
 %tryout
-person.x = [13];
-person.y = [10];
+person.x = [13 14 11  ];
+person.y = [10 10 14  ];
 
 person.level = [1 1 1];
 

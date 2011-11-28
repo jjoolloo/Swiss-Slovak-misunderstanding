@@ -9,8 +9,8 @@ for i=1:person.length
     floor = person.level(i);
     
     %force by precomputed forcefield
-    person.force_x(i)=map(floor).force_x(person.y,person.x);
-    person.force_y(i)=map(floor).force_y(person.y,person.x);
+    person.force_x(i)=map(floor).force_x(person.y(i),person.x(i));
+    person.force_y(i)=map(floor).force_y(person.y(i),person.x(i));
     
     
     

@@ -15,4 +15,5 @@ for iter=1:max_iter
     person = Forces(person,map);
     record = recording(person,iter,record);
     person = move(person,map);
+    person = action(person,map);
 end
