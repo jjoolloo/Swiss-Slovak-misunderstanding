@@ -29,11 +29,11 @@ person.y = [10 10 14  ];
 
 person.level = [1 1 1];
 
-person.mass = [2 2 2];
+
 
 person.force_x = [0 0 0];
 person.force_y = [0 0 0];
 
-person.color = [13 31 31];
 
-person.length = length(person.x);
+
+

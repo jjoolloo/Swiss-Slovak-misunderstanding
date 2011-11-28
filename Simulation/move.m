@@ -4,7 +4,7 @@ dt = 1; %timestep
 max_step = 5;
 
 
-for i=1:person.length
+for i=1:length(person.x)
 %     if person.force_x(i)*dt > max_step
 %         x_new = person.x(i) + max_step;
 %     elseif person.force_x(i)*dt < -max_step

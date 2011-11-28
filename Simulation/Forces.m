@@ -5,7 +5,7 @@ function [person] = Forces(person,map)
 %maximum force acting on a person
 max_f = 0.1; %subject to adjustment
 
-for i=1:person.length
+for i=1:length(person.x)
     floor = person.level(i);
     
     %force by precomputed forcefield
@@ -16,7 +16,7 @@ for i=1:person.length
     
     
     %force by other persons
-    for k=1:person.length
+    for k=1:length(person.x)
         if k~=i && person.level(i) == person.level(k) %not itself and only persons on the same floor
             dist = sqrt((person.x(i) - person.x(k))^2 + (person.y(i) - person.y(k))^2);
             if dist < 10 %cutoff length 

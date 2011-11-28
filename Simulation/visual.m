@@ -13,11 +13,11 @@ for k=1:M
         end
     end
 end
-
-for n = 1:length(record.time_x)
+[numiter numpers] = size(record.time_x);
+for n = 1:numiter
     hold on
     scatter(x,y,100,'k','filled')
-    for m=1:person.length
+    for m=1:numpers
         hold on
         scatter(record.time_x(n,m),record.time_y(n,m),50,'r','filled')
     end

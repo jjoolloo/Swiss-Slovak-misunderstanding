@@ -1,0 +1,17 @@
+function person = action(person,map)
+%takes persons out of the map, if they reach the exit
+%moves them to another floor
+%actions are defined by map.action
+%1 means exit
+%2 means change floor (to lower floor)
+
+for i=1:length(person.x)
+    x = person.x;
+    y = person.y;
+    if map.action(y,x) == 1   %remove person from map
+        p
+    end
+end
+
+
+end
