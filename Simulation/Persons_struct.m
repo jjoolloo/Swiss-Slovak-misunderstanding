@@ -24,8 +24,8 @@
 
 %%
 %tryout
-person.x = [];
-person.y = [];
+person.x = [13];
+person.y = [10];
 
 person.level = [1 1 1];
 
@@ -36,4 +36,4 @@ person.force_y = [0 0 0];
 
 person.color = [13 31 31];
 
-person.length = length(person.ex_x);
+person.length = length(person.x);

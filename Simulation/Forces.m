@@ -8,16 +8,9 @@ max_f = 0.1; %subject to adjustment
 for i=1:person.length
     floor = person.level(i);
     
-    force_x = map(floor).force_x;
-    force_y = map(floor).force_y;
-    
-    %force by potential
-    
-    
-    
-    
-    person.force_x(i)=force_x(i);
-    person.force_y(i)=force_y(i);
+    %force by precomputed forcefield
+    person.force_x(i)=map(floor).force_x(person.y,person.x);
+    person.force_y(i)=map(floor).force_y(person.y,person.x);
     
     
     

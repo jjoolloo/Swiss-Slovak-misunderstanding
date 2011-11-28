@@ -3,8 +3,8 @@ clear all ,clc ,close all
 
 
 % run Maps_struct
-% run Persons_struct
-load trymap_pot
+run Persons_struct
+load trymap
 
 
 
