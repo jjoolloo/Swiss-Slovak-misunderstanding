@@ -1,11 +1,7 @@
 
 % %exact coordinates
-% person.ex_x
-% person.ex_y
-% 
-% %on what cell are they standing
-% person.int_x
-% person.int_y
+% person.x
+% person.y
 % 
 % %on what floor are they
 % person.level
@@ -28,11 +24,8 @@
 
 %%
 %tryout
-person.ex_x = [22  5 10];
-person.ex_y = [25 25 29];
-
-person.int_x = uint64(person.ex_x);
-person.int_y = uint64(person.ex_y);
+person.x = [];
+person.y = [];
 
 person.level = [1 1 1];
 
