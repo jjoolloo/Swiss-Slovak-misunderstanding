@@ -1,15 +1,15 @@
 %main
-clear all ,clc ,close all
+clear all, clc ,close all
 
 
 % run Maps_struct
+
+load 1floor
+
+
 run Persons_struct
-load trymap
-
-
-
 record = []; %just a dummy for recording(....)
-max_iter = 100;
+max_iter = 200;
 
 for iter=1:max_iter
     person = action(person,map);

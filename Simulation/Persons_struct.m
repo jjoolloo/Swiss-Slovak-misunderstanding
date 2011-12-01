@@ -24,15 +24,15 @@
 
 %%
 %tryout
-person.x = [13 14 11  ];
-person.y = [10 10 14  ];
+person.x = [175];
+person.y = [12];
 
-person.level = [1 1 1];
+person.level = [1];
 
 
 
-person.force_x = [0 0 0];
-person.force_y = [0 0 0];
+person.force_x = [0];
+person.force_y = [0];
 
 
 

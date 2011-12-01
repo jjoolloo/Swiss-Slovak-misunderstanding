@@ -16,10 +16,10 @@ end
 [numiter numpers] = size(record.time_x);
 for n = 1:numiter
     hold on
-    scatter(x,y,100,'k','filled')
+    scatter(x,y,10,'k','filled')
     for m=1:numpers
         hold on
-        scatter(record.time_x(n,m),record.time_y(n,m),50,'r','filled')
+        scatter(record.time_x(n,m),record.time_y(n,m),5,'r','filled')
     end
     
     xlim([0 N]);

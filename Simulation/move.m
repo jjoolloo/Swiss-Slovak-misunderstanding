@@ -1,35 +1,18 @@
 function [person]=move(person,map)
 
-dt = 1; %timestep
-max_step = 5;
-
-
 for i=1:length(person.x)
-%     if person.force_x(i)*dt > max_step
-%         x_new = person.x(i) + max_step;
-%     elseif person.force_x(i)*dt < -max_step
-%         x_new = person.x(i) - max_step;
-%     else
-%         x_new = person.x(i) + floor(person.force_x(i)*dt);
-%     end
-%     
-%     if person.force_y(i)*dt > max_step
-%         y_new = person.y(i) + max_step;
-%     elseif person.force_y(i)*dt < -max_step
-%         y_new = person.y(i) - max_step;
-%     else
-%         y_new = person.y(i) + floor(person.force_y(i)*dt);
-%     end
+
 x_new = person.x(i) + int32(person.force_x(i));
-y_new = person.y(i) + int32(person.force_y(i));
+y_new = person.y(i) - int32(person.force_y(i));
     
 %making sure it isnt in the wall
-    while map.wall(y_new,x_new) > 0
-        %make small steps backwards
-        stepx = -(x_new - person.x(i))/abs(x_new - person.x(i));
-        stepy = -(y_new - person.y(i))/abs(y_new - person.y(i));
-        x_new = x_new + stepx;
-        y_new = y_new + stepy;
+    if map.wall(y_new,x_new) > 0
+       if map.wall(y_new+1,x_new) > 0 % ||  map.wall(y_new-1,x_new) > 0
+           x_new = person.x(i);
+       end
+       if map.wall(y_new,x_new+1) > 0 % ||  map.wall(y_new,x_new-1) > 0
+           y_new = person.y(i);
+       end
     end
     
     person.x(i) = x_new;
