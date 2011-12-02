@@ -25,7 +25,7 @@
 %%
 %tryout
 person.x = [175,175, 29];
-person.y = [12,12, 125];
+person.y = [ 12, 13,125];
 
 person.level = [1 1 1];
 

@@ -9,7 +9,7 @@ load 1floor;
 
 run Persons_struct;
 record = []; %just a dummy for recording(....)
-max_iter = 130;
+max_iter = 200;
 
 for iter=1:max_iter
     person = action(person,map);
