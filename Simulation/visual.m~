@@ -30,9 +30,8 @@ for n = 1:numiter
     disp(n)
 %for saving the pictures
     filename = '~/Downloads/Soc_Mod/';
-    
+    number = num2str(n);
     nuller = '00000';  %five letters
-    number = strcat(nuller(1:end-length(num2str(n))),num2str(n));
     filename = strcat(filename,number);
     saveas(gcf,filename,'jpg');
      clf(gcf)

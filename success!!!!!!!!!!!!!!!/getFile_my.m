@@ -9,6 +9,6 @@ F(space)=1;
 F(exit)=Inf;
 F(passenger)=2;
 F(wall)=0;
-F=flipud(F)
+F=flipud(F);
 end
 
