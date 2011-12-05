@@ -1,17 +1,8 @@
+function [record] = main(map,person,max_iter)
 %main
 clear all; clc; close all;
 
 
-% run Maps_struct
-
-% load 1floor;
-% run Persons_struct;
-load trymap
-load trypersons
-
-
-
-max_iter = 150;
 record = recordinit(max_iter,person);
 
 
@@ -21,4 +12,4 @@ for iter=1:max_iter
     record = recording(person,iter,record);
     person = move(person,map);
 end
-%run visual
+end

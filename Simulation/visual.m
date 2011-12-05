@@ -1,7 +1,7 @@
+function visual(map,record,floor)
 %visualizing stuff
-close all
 figure(1)
-floor = 2;  %what floor do you want to see?
+
 [M,N] = size(map(floor).wall);
 x = [];
 y = [];
@@ -42,4 +42,4 @@ for n = 1:numiter
 end
 
 hold off
-clear n k l m floor
+end

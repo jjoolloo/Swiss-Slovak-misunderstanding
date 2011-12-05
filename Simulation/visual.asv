@@ -1,13 +1,13 @@
+function 
 %visualizing stuff
-close all
 figure(1)
-
-[M,N] = size(map(1).wall);
+floor = 2;  %what floor do you want to see?
+[M,N] = size(map(floor).wall);
 x = [];
 y = [];
 for k=1:M
     for l=1:N
-        if map(1).wall(k,l) > 0
+        if map(floor).wall(k,l) > 0
             x = [x,l];
             y = [y,k];
         end
@@ -18,8 +18,10 @@ for n = 1:numiter
     hold on
     scatter(x,y,10,'k','filled')
     for m=1:numpers
-        hold on
-        scatter(record.time_x(n,m),record.time_y(n,m),5,'r','filled')
+        if record.time_floor(n,m) == floor
+            hold on
+            scatter(record.time_x(n,m),record.time_y(n,m),5,'r','filled')
+        end
     end
     
     xlim([0 N]);
@@ -40,4 +42,4 @@ for n = 1:numiter
 end
 
 hold off
-clear n k l m 
+clear n k l m floor
