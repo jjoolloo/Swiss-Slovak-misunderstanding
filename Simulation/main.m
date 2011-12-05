@@ -4,9 +4,10 @@ clear all; clc; close all;
 
 % run Maps_struct
 
-load 1floor;
-run Persons_struct;
-
+% load 1floor;
+% run Persons_struct;
+load trymap
+load trypersons
 
 
 

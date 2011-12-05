@@ -9,15 +9,23 @@ new_person = person;
 for i=1:length(person.x)
     x = person.x(i);
     y = person.y(i);
-    if map.action(y,x) == 1   %remove person from map
+    if map(person.level(i)).action(y,x) == 1   %remove person from map
         new_person.x(i) = [];
         new_person.y(i) = [];
         new_person.level(i) = [];
         new_person.force_x(i) = [];
         new_person.force_y(i) = [];
     end
-    if map.action(y,x) == 2   %change floor
-        new_person.level(i) = person.level(i)-1;
+    if map(person.level(i)).action(y,x) == 2   %change floor (put those cells generously around the stairs)
+        ind = find(person.level == person.level(i)-1);
+        if ~isempty(ind)
+            if person.x(i) ~= person.x(ind) && person.y(i) ~= person.y(ind)
+                new_person.level(i) = person.level(i)-1;
+            end
+        end
+        if isempty(ind)
+            new_person.level(i) = person.level(i)-1; %if there is only one person on the map do it anyway
+        end
     end
 end
 
