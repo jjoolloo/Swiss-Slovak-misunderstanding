@@ -1,5 +1,7 @@
 function [person]=move(person,map)
 
+
+
 for i=1:length(person.x)
 
 x_new = person.x(i) + int32(person.force_x(i));

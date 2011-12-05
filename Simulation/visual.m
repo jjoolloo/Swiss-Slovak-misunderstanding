@@ -29,7 +29,7 @@ for n = 1:numiter
     %waitforbuttonpress();
     disp(n)
 
-%     %for saving the pictures
+    %for saving the pictures
 %     filename = '~/Downloads/Soc_Mod/';  %on alex' mac book pro
 %     nuller = '00000';  %five letters
 %     number = strcat(nuller(1:end-length(num2str(n))),num2str(n));
