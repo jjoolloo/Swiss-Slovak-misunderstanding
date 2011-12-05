@@ -1,6 +1,7 @@
 #ifndef _PERFORM_FRONT_PROPAGATION_2D_H_
 #define _PERFORM_FRONT_PROPAGATION_2D_H_
 
+#include <mex.h>
 #include <math.h>
 #include "config.h"
 #include <stdio.h>
