@@ -1,6 +1,5 @@
 function [record] = main(map,person,max_iter)
 %main
-clear all; clc; close all;
 
 
 record = recordinit(max_iter,person);
