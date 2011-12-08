@@ -24,9 +24,9 @@ for i=1:a
     
 end
 
-I(300,255)=2;
-I(200,150)=2;
-I(200,330)=2;
+% I(300,255)=2;
+% I(200,150)=2;
+% I(200,330)=2;
 
 f = getFile_my(I);
 [FX,FY]=computeGradientField1(f);

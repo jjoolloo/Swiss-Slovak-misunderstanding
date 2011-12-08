@@ -1,7 +1,6 @@
 function [record] = main(map,person,max_iter)
 %main
 
-
 record = recordinit(max_iter,person);
 
 
