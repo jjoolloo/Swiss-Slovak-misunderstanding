@@ -1,7 +1,7 @@
 % 
 % %map(floor).wall map (wall is "inf", else 0)
 % %map(floor).force_x map (models the escape way) added onto wall map
-% %map(floor).force_y for visualizing
+% %map(floor).force_y 
 % %map(floor).map for actions (change floor, remove exited persons)
 % %one cell length equals .5 meter
 % 
