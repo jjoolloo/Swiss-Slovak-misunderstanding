@@ -1,7 +1,7 @@
 % function [record] = main(map,person,max_iter)
 % %main
-load Personputter/personsLARGE
-load Maps/Building(1exit)LARGE
+% load Personputter/personsLARGE
+% load Maps/Building(1exit)LARGE
 
 max_iter = 500;
 record = recordinit(max_iter,person);

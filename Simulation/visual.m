@@ -1,7 +1,7 @@
 function visual(map,record,floor)
 %visualizing stuff
 figure(1)
-
+%set(1,'visible','off')
 [M,N] = size(map(floor).wall);
 x = [];
 y = [];
@@ -27,16 +27,16 @@ for n = 1:numiter
     xlim([0 N]);
     ylim([0 M]);
     
-    %pause(0.05)
+    pause(0.05)
     %waitforbuttonpress();
     disp(n)
 
     %for saving the pictures
-    filename = '~/Downloads/Soc_Mod/';  %on alex' mac book pro
-    nuller = '00000';  %five letters
-    number = strcat(nuller(1:end-length(num2str(n))),num2str(n));
-    filename = strcat(filename,number);
-    saveas(gcf,filename,'jpg');
+%     filename = '~/Downloads/Soc_Mod/';  %on alex' mac book pro
+%     nuller = '00000';  %five letters
+%     number = strcat(nuller(1:end-length(num2str(n))),num2str(n));
+%     filename = strcat(filename,number);
+%     saveas(gcf,filename,'jpg');
     
     clf(gcf)
 end

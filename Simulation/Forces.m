@@ -1,7 +1,7 @@
 function [person] = Forces(person,map)
 
-
-a = 1; %force parameter
+a_map = 6;
+a_pers = 3; %force parameter
 
 for i=1:length(person.x)
     floor = person.level(i);
@@ -16,7 +16,7 @@ for i=1:length(person.x)
             deltax = person.x(i)-person.x(k);
             deltay = person.y(i)-person.y(k);
             dist = (deltax^2+deltay^2);
-            force = a/dist;
+            force = a_pers/dist;
             person.force_x(i) = person.force_x(i) + force*deltax/dist;
             person.force_y(i) = person.force_y(i) + force*deltay/dist;
         end
