@@ -26,17 +26,17 @@ for n = 1:numiter
     
     xlim([0 N]);
     ylim([0 M]);
-    grid on
-    pause(0.1)
+    
+    %pause(0.05)
     %waitforbuttonpress();
     disp(n)
 
     %for saving the pictures
-%     filename = '~/Downloads/Soc_Mod/';  %on alex' mac book pro
-%     nuller = '00000';  %five letters
-%     number = strcat(nuller(1:end-length(num2str(n))),num2str(n));
-%     filename = strcat(filename,number);
-%     saveas(gcf,filename,'jpg');
+    filename = '~/Downloads/Soc_Mod/';  %on alex' mac book pro
+    nuller = '00000';  %five letters
+    number = strcat(nuller(1:end-length(num2str(n))),num2str(n));
+    filename = strcat(filename,number);
+    saveas(gcf,filename,'jpg');
     
     clf(gcf)
 end
