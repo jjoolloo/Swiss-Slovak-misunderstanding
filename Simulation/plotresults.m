@@ -1,3 +1,4 @@
+function [nop_building, nop_floor1, nop_floor2, nop_floor3] = plotresults(record) 
 %plot results
 
 [numiter numpers] = size(record.time_x);
@@ -16,5 +17,5 @@ for i=1:numiter
     nop_floor2(i) = numel(find(record.time_floor(i,:) == 2));
     nop_floor1(i) = numel(find(record.time_floor(i,:) == 1));
 end
-
+end
 

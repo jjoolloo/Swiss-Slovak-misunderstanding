@@ -1,7 +1,7 @@
 function [person] = Forces(person,map)
 
-a_map = 6;
-a_pers = 1.5; %force parameter
+a_map = 0.3;  %for LARGE 6, for normal 1 
+a_pers = .1; %force parameter , for LARGE 1.5, for normal 0.75
 
 for i=1:length(person.x)
     floor = person.level(i);

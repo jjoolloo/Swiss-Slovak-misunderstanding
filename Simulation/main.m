@@ -1,9 +1,9 @@
-% function [record] = main(map,person,max_iter)
+function [record] = main(map,person,max_iter)
 % %main
 % load Personputter/personsLARGE
 % load Maps/Building(1exit)LARGE
 
-max_iter = 800;
+%max_iter = 800;
 record = recordinit(max_iter,person);
 
 
@@ -13,4 +13,4 @@ for iter=1:max_iter
     record = recording(person,iter,record);
     person = move(person,map);
 end
-% end
+end
