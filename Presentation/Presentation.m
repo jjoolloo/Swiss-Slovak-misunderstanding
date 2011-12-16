@@ -23,34 +23,45 @@ for k=1:M
         end
     end
 end
-[numiter numpers] = size(record2.time_x);
-
+[numiter numpers] = size(record.time_x);
+[nop_building] = plotresults(record);
 
 
 for n = 1:numiter
-    hold on
+    %hold on
     subplot(2,2,1)
     plot(x1,y1,'k.')
     subplot(2,2,2)
     plot(x2,y2,'k.')
-    subplot(2,2,2)
+    subplot(2,2,3)
     plot(x3,y3,'k.')
-%     for m=1:numpers
-%         if record2.time_floor(n,m) == 1
-%             subplot(2,2,1)
-%             plot(record2.time_x(n,m),record2.time_y(n,m),'r.')
-%         end
-%         if record2.time_floor(n,m) == 2
-%             subplot(2,2,2)
-%             plot(record2.time_x(n,m),record2.time_y(n,m),'r.')
-%         end
-%         if record2.time_floor(n,m) == 3
-%             subplot(2,2,3)
-%             plot(record2.time_x(n,m),record2.time_y(n,m),'r.')
-%         end
-%     end
-
-    pause(0.05);
-
+    for m=1:numpers
+        if record.time_floor(n,m) == 1
+            subplot(2,2,1)
+            hold on
+            plot(record.time_x(n,m),record.time_y(n,m),'r.')
+        end
+        if record.time_floor(n,m) == 2
+            subplot(2,2,2)
+            hold on
+            plot(record.time_x(n,m),record.time_y(n,m),'r.')
+        end
+        if record.time_floor(n,m) == 3
+            subplot(2,2,3)
+            hold on
+            plot(record.time_x(n,m),record.time_y(n,m),'r.')
+        end
+    end
+    subplot(2,2,4)
+    plot(nop_building(1:n));
+    xlim([0 numiter]);
+    ylim([0 numpers+10]);
+    %pause(0.02);
+    filename = 'C:\Users\joehla\';  
+    nuller = '00000';  %five letters
+    number = strcat(nuller(1:end-length(num2str(n))),num2str(n));
+    filename = strcat(filename,number);
+    saveas(gcf,filename,'jpg');
+    disp(n)
     clf(gcf);
 end
